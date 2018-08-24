@@ -1,7 +1,7 @@
 Name:       libsbc
 
 Summary:    SBC library
-Version:    1.1
+Version:    1.3
 Release:    1
 Group:      System/Libraries
 License:    GPLv2

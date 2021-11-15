@@ -1,10 +1,9 @@
 Name:       libsbc
 
 Summary:    SBC library
-Version:    1.3
+Version:    1.4
 Release:    1
-Group:      System/Libraries
-License:    GPLv2
+License:    LGPLv2+
 URL:        http://www.kernel.org/pub/linux/bluetooth/
 Source0:    %{name}-%{version}.tar.xz
 Requires(post): /sbin/ldconfig
@@ -18,15 +17,14 @@ Bluetooth low-complexity, subband codec (SBC) library
 
 %package tools
 Summary:    SBC tools
-Group:      System/Applications
 Requires:   libsbc = %{version}-%{release}
+License:    GPLv2+
 
 %description tools
 Description: %{summary}
 
 %package devel
 Summary:    SBC development headers and libraries
-Group:      Development/Libraries
 Requires:   libsbc = %{version}-%{release}
 
 %description devel
@@ -34,17 +32,15 @@ Description: %{summary}
 
 
 %prep
-%setup -q -n %{name}-%{version}
+%autosetup -p1 -n %{name}-%{version}/sbc
 
 %build
-cd sbc
 autoreconf -v -f -i
 %configure --disable-static
-make %{?jobs:-j%jobs}
+%make_build
 
 %install
 rm -rf %{buildroot}
-cd sbc
 %make_install
 
 %fdupes  %{buildroot}/%{_datadir}
@@ -56,10 +52,12 @@ cd sbc
 
 %files
 %defattr(-,root,root,-)
+%license COPYING.LIB
 %{_libdir}/libsbc.so.*
 
 %files tools
 %defattr(-,root,root,-)
+%license COPYING
 %{_bindir}/sbcdec
 %{_bindir}/sbcenc
 %{_bindir}/sbcinfo

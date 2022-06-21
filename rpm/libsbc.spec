@@ -5,7 +5,7 @@ Version:    1.3
 Release:    1
 Group:      System/Libraries
 License:    GPLv2
-URL:        http://www.kernel.org/pub/linux/bluetooth/
+URL:        https://github.com/sailfishos/sbc
 Source0:    %{name}-%{version}.tar.xz
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig

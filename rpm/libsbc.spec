@@ -3,9 +3,8 @@ Name:       libsbc
 Summary:    SBC library
 Version:    1.3
 Release:    1
-Group:      System/Libraries
 License:    GPLv2
-URL:        http://www.kernel.org/pub/linux/bluetooth/
+URL:        https://github.com/sailfishos/sbc
 Source0:    %{name}-%{version}.tar.xz
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
@@ -18,7 +17,6 @@ Bluetooth low-complexity, subband codec (SBC) library
 
 %package tools
 Summary:    SBC tools
-Group:      System/Applications
 Requires:   libsbc = %{version}-%{release}
 
 %description tools
@@ -26,7 +24,6 @@ Description: %{summary}
 
 %package devel
 Summary:    SBC development headers and libraries
-Group:      Development/Libraries
 Requires:   libsbc = %{version}-%{release}
 
 %description devel

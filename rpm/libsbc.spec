@@ -1,7 +1,7 @@
 Name:       libsbc
 
 Summary:    SBC library
-Version:    1.4
+Version:    2.0
 Release:    1
 License:    LGPLv2+
 URL:        https://github.com/sailfishos/sbc

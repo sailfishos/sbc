@@ -1,7 +1,7 @@
 Name:       libsbc
 
 Summary:    SBC library
-Version:    2.0
+Version:    2.2
 Release:    1
 License:    LGPLv2+
 URL:        https://github.com/sailfishos/sbc
@@ -51,19 +51,16 @@ rm -rf %{buildroot}
 %postun -p /sbin/ldconfig
 
 %files
-%defattr(-,root,root,-)
 %license COPYING.LIB
 %{_libdir}/libsbc.so.*
 
 %files tools
-%defattr(-,root,root,-)
 %license COPYING
 %{_bindir}/sbcdec
 %{_bindir}/sbcenc
 %{_bindir}/sbcinfo
 
 %files devel
-%defattr(-,root,root,-)
 %{_libdir}/libsbc.so
 %{_libdir}/pkgconfig/*.pc
 %{_includedir}/sbc/*.h
